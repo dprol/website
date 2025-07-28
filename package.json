@@ -19,11 +19,12 @@
     "log-update": "^6",
     "markdown-it": "^14",
     "markdown-it-katex": "^2",
-    "prettier": "^3",
-    "prettier-plugin-organize-imports": "^4",
     "preact": "^10",
     "preact-render-to-string": "^6",
+    "prettier": "^3",
+    "prettier-plugin-organize-imports": "^4",
     "qr": "^0.5",
+    "tsx": "^4.20.3",
     "typescript": "^5.6"
   }
 }
