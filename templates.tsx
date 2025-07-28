@@ -54,9 +54,6 @@ export const indexHtml = ({
             class="fa-brands fa-linkedin fa-2x"
             href="https://www.linkedin.com/in/dannyprol/"
           ></a>
-          <a class="fa-brands fa-substack fa-2x"
-  href="https://computingeducationthings.substack.com/"
-  ></a>
 
   <a class="fa-brands fa-google-scholar fa-2x"
   href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=ANZ5fUOMurZyH0skWC2FvVythJGco0VwY0QH9tkZ0-R7dg2j5bQ8FLTwb4eRjDZqwWeCI4K1g0WM_MIN6ZarjA&user=mgKTgWcAAAAJ"
