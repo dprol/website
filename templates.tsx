@@ -44,7 +44,7 @@ export const indexHtml = ({
     <body>
       <main>
         <div class="me">
-          <img class="photo" src="photo.jpeg" width="100" height="100" />
+          <img class="photo" src="photo.jpg" width="100" height="100" />
           <h1 class="name">Daniel Prol</h1>
         </div>
         <div class="socials">
@@ -75,18 +75,17 @@ export const indexHtml = ({
           ></a>
         </div>
         <p>
-          Hi! <span class="wave">👋</span> I'm Sam{" "}
-          <a class="pronouns" href="https://pronouns.org/he-him">
-            (he/him)
-          </a>
-          . I'm a fourth-year PhD student in{" "}
-          <a href="https://s3d.cmu.edu/">S3D</a> at CMU, advised by{" "}
-          <a href="https://www.cs.cmu.edu/~jssunshi/">Joshua Sunshine</a>. I do
-          research on <span class="topic">differentiable programming</span> (you
-          should <a href="https://discord.gg/RZ37HrpheT">join us on Discord</a>
-          !), with a particular focus on performance for interactive visual
-          applications. Here are some of my projects:
-        </p>
+  Hi! <span class="wave">👋</span> I'm Daniel{" "}
+  <a class="pronouns" href="https://pronouns.org/he-him">
+    (he/him)
+  </a>
+  . I'm a first-year PhD student in{" "}
+  <a href="https://uhcsed.web.app/">CS</a> at UH, advised by{" "}
+  <a href="https://www.aminalipour.com/">Amin Alipour</a>. I do
+  research in <span class="topic">Computing Education</span> (you
+  should <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
+  !). Here are some of my projects:
+</p>
         <ul>
           <li>
             <a href="https://github.com/gradbench/gradbench">GradBench</a> is an
