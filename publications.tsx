@@ -7,38 +7,32 @@ interface Author {
 
 const author = (name: string, href: string): Author => ({ name, href });
 
-const brad = author("Brad A. Myers", "https://www.cs.cmu.edu/~bam/");
-
-const eric = author("Éric Tanter", "https://pleiad.cl/people/etanter");
-
-const hweiShin = author("Hwei-Shin Harriman", "https://hsharriman.github.io/");
-
-const jenna = author("Jenna DiVincenzo", "https://jennalwise.github.io/");
-
-const jiri = author("Jiří Minarčík", "https://minarcik.com/");
-
-const johannes = author("Johannes Bader", "https://johannes-bader.com/");
-
-const jonathan = author("Jonathan Aldrich", "https://www.cs.cmu.edu/~aldrich/");
-
-const josh = author("Joshua Sunshine", "https://www.cs.cmu.edu/~jssunshi/");
-
-const keenan = author("Keenan Crane", "https://www.cs.cmu.edu/~kmcrane/");
-
-const ken = author("Ken Koedinger", "https://pact.cs.cmu.edu/koedinger.html");
-
-const matt = author("Matthew C. Davis", "https://cmumatt.github.io/");
-
-const nimo = author("Wode Ni", "https://www.cs.cmu.edu/~woden/");
-
-const raven = author("Raven Rothkopf", "https://ravenrothkopf.com/");
-
-const sam = author("Sam Estep", "/");
-
-const sang = author(
-  "Sangheon Choi",
-  "https://www.linkedin.com/in/sang-heon-choi/",
-);
+// Authors from the publications
+const danielProl = author("Daniel Prol", "/");
+const aminAlipour = author("Amin Alipour", "https://www.aminalipour.com/");
+const jamessPrather = author("James Prather", "https://www.jamessprather.com/");
+const brentReeves = author("Brent N Reeves", "#");
+const paulDenny = author("Paul Denny", "https://www.cs.auckland.ac.nz/~paul/");
+const juhoLeinonen = author("Juho Leinonen", "#");
+const stephenMacNeil = author("Stephen MacNeil", "#");
+const andrewLuxtonReilly = author("Andrew Luxton-Reilly", "#");
+const joaoOrvalho = author("João Orvalho", "#");
+const aliAhmadi = author("Ali Ahmadi", "#");
+const thezyrie = author("Thezyrie Amarouche", "#");
+const bailey = author("Bailey Kimmel", "#");
+const jared = author("Jared Wright", "#");
+const musa = author("Musa Blake", "#");
+const gweneth = author("Gweneth Barbre", "#");
+const aayush = author("Aayush Kumar", "#");
+const sruti = author("Sruti Srinivasa Ragavan", "#");
+const giulia = author("Giulia Toti", "#");
+const leiSi = author("Lei Si", "#");
+const davidDaniels = author("David Daniels", "#");
+const matinYarmand = author("Matin Yarmand", "#");
+const guoning = author("Guoning Chen", "#");
+const dayeNam = author("Daye Nam", "#");
+const michaelHilton = author("Michael Hilton", "#");
+const stellaChen = author("Stella Chen", "#");
 
 interface Venue {
   name: string;
@@ -50,55 +44,89 @@ interface Publication {
   href: string;
   venue: Venue;
   authors: Author[];
+  year: number;
+  type: string;
 }
 
 const pubs: Publication[] = [
   {
-    title: "Codifying Visual Representations",
-    href: "https://doi.org/10.1007/978-3-031-71291-3_37",
+    title: "Breaking the Programming Language Barrier: Multilingual Prompting to Empower Non-Native English Learners",
+    href: "https://dl.acm.org/doi/full/10.1145/3716640.3716649",
     venue: {
-      name: "DIAGRAMS 2024",
-      href: "https://diagrams-2024.diagrams-conference.org/",
+      name: "ACE 2025",
+      href: "https://aceconference.org/",
     },
-    authors: [nimo, sam, hweiShin, jiri, josh],
+    authors: [
+      jamessPrather, brentReeves, paulDenny, juhoLeinonen, stephenMacNeil, 
+      andrewLuxtonReilly, joaoOrvalho, aminAlipour, aliAhmadi, thezyrie, 
+      bailey, jared, musa, gweneth
+    ],
+    year: 2025,
+    type: "Conference",
   },
   {
-    title: "Rose: Composable Autodiff for the Interactive Web",
-    href: "https://doi.org/10.4230/LIPIcs.ECOOP.2024.15",
-    venue: { name: "ECOOP 2024", href: "https://2024.ecoop.org/" },
-    authors: [sam, nimo, raven, josh],
-  },
-  {
-    title:
-      "Minkowski Penalties: Robust Differentiable Constraint Enforcement for Vector Graphics",
-    href: "https://doi.org/10.1145/3641519.3657495",
-    venue: { name: "SIGGRAPH 2024", href: "https://s2024.siggraph.org/" },
-    authors: [jiri, sam, nimo, keenan],
-  },
-  {
-    title:
-      "Edgeworth: Efficient and Scalable Authoring of Visual Thinking Activities",
-    href: "https://doi.org/10.1145/3657604.3662034",
+    title: "To Google or To ChatGPT? A Comparison of CS2 Students Information Gathering Approaches and Outcomes",
+    href: "https://arxiv.org/abs/2501.11935",
     venue: {
-      name: "L@S 2024",
-      href: "https://learningatscale.hosting.acm.org/las2024/",
+      name: "arXiv Preprint",
+      href: "https://arxiv.org/",
     },
-    authors: [nimo, sam, hweiShin, ken, josh],
+    authors: [aayush, danielProl, aminAlipour, sruti],
+    year: 2025,
+    type: "Preprint",
   },
   {
-    title: "NaNofuzz: A Usable Tool for Automatic Test Generation",
-    href: "https://doi.org/10.1145/3611643.3616327",
+    title: "Students and Instructors Reflections on the Impact of COVID-19 on Computer Science Education after One Year of Remote Teaching",
+    href: "https://link.springer.com/article/10.1007/s44217-025-00438-1",
     venue: {
-      name: "ESEC/FSE 2023",
-      href: "https://conf.researchr.org/home/fse-2023",
+      name: "Discover Education",
+      href: "https://link.springer.com/journal/44217",
     },
-    authors: [matt, sang, sam, brad, josh],
+    authors: [giulia, leiSi, davidDaniels, matinYarmand, aminAlipour, guoning],
+    year: 2025,
+    type: "Journal",
   },
   {
-    title: "Gradual Program Analysis for Null Pointers",
-    href: "https://doi.org/10.4230/LIPIcs.ECOOP.2021.3",
-    venue: { name: "ECOOP 2021", href: "https://2021.ecoop.org/" },
-    authors: [sam, jenna, jonathan, eric, johannes, josh],
+    title: "Student-AI Interaction: A Case Study of CS1 students",
+    href: "https://dl.acm.org/doi/abs/10.1145/3699538.3699567",
+    venue: {
+      name: "Koli Calling 2024",
+      href: "https://www.kolicalling.fi/",
+    },
+    authors: [
+      matinYarmand, dayeNam, danielProl, aliAhmadi, jamessPrather, 
+      michaelHilton, sruti, aminAlipour
+    ],
+    year: 2024,
+    type: "Conference",
+  },
+  {
+    title: "Trust in Generative AI among Students: An exploratory study",
+    href: "https://dl.acm.org/doi/abs/10.1145/3626252.3630842",
+    venue: {
+      name: "SIGCSE 2024",
+      href: "https://sigcse2024.sigcse.org/",
+    },
+    authors: [
+      matinYarmand, davidDaniels, dayeNam, aayush, stellaChen, 
+      michaelHilton, sruti, aminAlipour
+    ],
+    year: 2024,
+    type: "Conference",
+  },
+  {
+    title: "Towards characterizing trust in generative artificial intelligence among students",
+    href: "https://dl.acm.org/doi/abs/10.1145/3568812.3603469",
+    venue: {
+      name: "ICER 2023",
+      href: "https://icer2023.acm.org/",
+    },
+    authors: [
+      matinYarmand, davidDaniels, stellaChen, dayeNam, aayush, 
+      michaelHilton, aminAlipour, sruti
+    ],
+    year: 2023,
+    type: "Poster",
   },
 ];
 
@@ -137,8 +165,8 @@ export const publications = (): JSX.Element => (
             {authors(pub.authors)}.{" "}
             <a class="venue" href={pub.venue.href}>
               {pub.venue.name}
-            </a>
-            .
+            </a>{" "}
+            ({pub.year}).
           </div>
         </div>
       );
