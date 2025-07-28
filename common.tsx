@@ -92,27 +92,30 @@ export const getBlogPostBody = async (
 interface BlogPost {
   date?: string;
   title: string;
+  href: string;
 }
 
 export const blogPosts: Record<string, BlogPost> = {
-  autodiff: { title: "Differentiable Programming in General" },
-  "incremental-parsing": {
-    title: "How much faster is incremental parsing, really?",
+  "vibe-coding": { 
+    title: "Vibe Coding Among CS Students",
+    date: "2025-06-12",
+    href: "https://medium.com/@dannyprol/vibe-coding-among-cs-students-68a8861df436"
   },
-  "linked-lists": { title: "How much slower are linked lists, really?" },
-  "random-access": {
-    date: "2025-06-23",
-    title: "How much slower is random access, really?",
+  "koli-calling": { 
+    title: "Koli Calling 2024 Trip Report",
+    date: "2024-11-17", 
+    href: "https://dprol.github.io/blog/hydejack/2024-11-17-koli/"
   },
-  "typst-impressions": {
-    date: "2025-03-27",
-    title: "First impressions with Typst",
+  "future-software-development": {
+    title: "The Future of Software Development and the Role of Computing Education with LLMs",
+    date: "2024-05-22",
+    href: "https://dprol.github.io/blog/hydejack/2024-05-22-llms-junior-devs/"
   },
-  "random-integers": {
-    date: "2024-10-20",
-    title: "How can computers roll dice?",
-  },
-  "parallelizing-nvcc": { date: "2021-02-20", title: "Parallelizing nvcc" },
+  "ai-changed-coding": {
+    title: "How AI changed the way we learn to code", 
+    date: "2024-05-13",
+    href: "https://dprol.github.io/blog/hydejack/2024-05-13-ai-education/"
+  }
 };
 
 export const md = markdownit({

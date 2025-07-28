@@ -33,6 +33,11 @@ const guoning = author("Guoning Chen", "#");
 const dayeNam = author("Daye Nam", "#");
 const michaelHilton = author("Michael Hilton", "#");
 const stellaChen = author("Stella Chen", "#");
+// Missing author definitions added:
+const aliAlfageeh = author("Ali Alfageeh", "#");
+const sadeghAlMahdi = author("Sadegh AlMahdi Kazemi Zarkouei", "#");
+const matinAmoozadeh = author("Matin Amoozadeh", "#");
+const soutiChattopadhyay = author("Souti Chattopadhyay", "#");
 
 interface Venue {
   name: string;
@@ -50,21 +55,6 @@ interface Publication {
 
 const pubs: Publication[] = [
   {
-    title: "Breaking the Programming Language Barrier: Multilingual Prompting to Empower Non-Native English Learners",
-    href: "https://dl.acm.org/doi/full/10.1145/3716640.3716649",
-    venue: {
-      name: "ACE 2025",
-      href: "https://aceconference.org/",
-    },
-    authors: [
-      jamessPrather, brentReeves, paulDenny, juhoLeinonen, stephenMacNeil, 
-      andrewLuxtonReilly, joaoOrvalho, aminAlipour, aliAhmadi, thezyrie, 
-      bailey, jared, musa, gweneth
-    ],
-    year: 2025,
-    type: "Conference",
-  },
-  {
     title: "To Google or To ChatGPT? A Comparison of CS2 Students Information Gathering Approaches and Outcomes",
     href: "https://arxiv.org/abs/2501.11935",
     venue: {
@@ -74,17 +64,6 @@ const pubs: Publication[] = [
     authors: [aayush, danielProl, aminAlipour, sruti],
     year: 2025,
     type: "Preprint",
-  },
-  {
-    title: "Students and Instructors Reflections on the Impact of COVID-19 on Computer Science Education after One Year of Remote Teaching",
-    href: "https://link.springer.com/article/10.1007/s44217-025-00438-1",
-    venue: {
-      name: "Discover Education",
-      href: "https://link.springer.com/journal/44217",
-    },
-    authors: [giulia, leiSi, davidDaniels, matinYarmand, aminAlipour, guoning],
-    year: 2025,
-    type: "Journal",
   },
   {
     title: "Student-AI Interaction: A Case Study of CS1 students",
@@ -101,32 +80,19 @@ const pubs: Publication[] = [
     type: "Conference",
   },
   {
-    title: "Trust in Generative AI among Students: An exploratory study",
-    href: "https://dl.acm.org/doi/abs/10.1145/3626252.3630842",
+    title: "From prompts to propositions: A logic-based lens on student-llm interactions",
+    href: "https://arxiv.org/abs/2504.18691",
     venue: {
-      name: "SIGCSE 2024",
-      href: "https://sigcse2024.sigcse.org/",
+      name: "arXiv Preprint",
+      href: "https://arxiv.org/",
     },
     authors: [
-      matinYarmand, davidDaniels, dayeNam, aayush, stellaChen, 
+      aliAlfageeh, sadeghAlMahdi, dayeNam, danielProl, matinAmoozadeh, 
+      soutiChattopadhyay, jamessPrather, paulDenny, juhoLeinonen, 
       michaelHilton, sruti, aminAlipour
     ],
-    year: 2024,
-    type: "Conference",
-  },
-  {
-    title: "Towards characterizing trust in generative artificial intelligence among students",
-    href: "https://dl.acm.org/doi/abs/10.1145/3568812.3603469",
-    venue: {
-      name: "ICER 2023",
-      href: "https://icer2023.acm.org/",
-    },
-    authors: [
-      matinYarmand, davidDaniels, stellaChen, dayeNam, aayush, 
-      michaelHilton, aminAlipour, sruti
-    ],
-    year: 2023,
-    type: "Poster",
+    year: 2025,
+    type: "Preprint",
   },
 ];
 
