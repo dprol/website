@@ -77,7 +77,7 @@ export const indexHtml = ({
         <h2>Publications</h2>
         {pubs}
         <h2>Projects</h2>
-        <p>Here are a few projects I've made over the years.</p>
+        <p>Here are a few projects I've worked on over the years.</p>
         <div class="stuff">
           <a href="https://marketplace.visualstudio.com/items?itemName=dprol.buddy-ai">
             <div class="toy">
@@ -85,7 +85,7 @@ export const indexHtml = ({
               <h3 class="year">2025</h3>
             </div>
             <p>
-              Buddy is a VS Code extension that helps students better understand programming problems.
+              Buddy is a VS Code extension that helps students better understand programming concepts.
             </p>
           </a>
           <a href="https://uhcsed.web.app/">
@@ -94,7 +94,7 @@ export const indexHtml = ({
               <h3 class="year">2025</h3>
             </div>
             <p>
-              See who I work with and what we do in our research group.
+              Learn about who I work with and what we do in our research group.
             </p>
           </a>
           <a href="https://evangelio.app/">
@@ -103,7 +103,7 @@ export const indexHtml = ({
               <h3 class="year">2024</h3>
             </div>
             <p>
-              Here you will find a selection of podcasts in Spanish to let Jesus enlighten your daily routine.
+              A curated selection of Spanish-language podcasts to bring Jesus into your daily routine.
             </p>
           </a>
           <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
@@ -112,7 +112,7 @@ export const indexHtml = ({
               <h3 class="year">2018</h3>
             </div>
             <p>
-              SaaS Product Chat was a video podcast in Spanish about topics related to software as a service where we invited speakers from the Latam/Spain technology industry.
+              SaaS Product Chat was a Spanish-language video podcast covering software-as-a-service topics, featuring speakers from the Latin American and Spanish tech industry.
             </p>
           </a>
         </div>

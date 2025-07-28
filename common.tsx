@@ -161,7 +161,9 @@ const generate = async () => {
   await writeFile(`${out}/icon.png`, png);
 
   // Only show published blog posts in the index
-  const publishedPosts = Object.entries(blogPosts).filter(([_, { date }]) => date !== undefined);
+  const publishedPosts = Object.entries(blogPosts)
+    .filter(([_, { date }]) => date !== undefined)
+    .sort(([,a], [,b]) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
 
   await writeFile(
     `${out}/index.html`,
@@ -170,22 +172,25 @@ const generate = async () => {
         pubs: publications(),
         blog: (
           <ul>
-            {publishedPosts
-              .map(([id, { date, title }]) => {
-                const name = escapeHTML(title);
-                return (
-                  <li>
-                    {date} <a href={`/blog/${id}/`}>{name}</a>
-                  </li>
-                );
-              })}
+            {publishedPosts.map(([id, { date, title, href }]) => {
+              return (
+                <li key={id}>
+                  {date} <a href={href} target="_blank" rel="noopener noreferrer">
+                    {title}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         ),
       }),
     ),
   );
 
-  // Only generate pages for posts that actually have content
+  console.log("✅ Generated index with external blog links");
+  
+  // Comentado: Ya no generamos páginas internas porque todos los posts son externos
+  /*
   for (const [name, { date, title }] of Object.entries(blogPosts)) {
     const markdownFile = `src/blog/${name}/index.md`;
     
@@ -223,6 +228,7 @@ const generate = async () => {
       console.log(`❌ Error generating blog post "${name}":`, String(error));
     }
   }
+  */
 };
 
 export const build = async () => {

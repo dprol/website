@@ -66,20 +66,6 @@ const pubs: Publication[] = [
     type: "Preprint",
   },
   {
-    title: "Student-AI Interaction: A Case Study of CS1 students",
-    href: "https://dl.acm.org/doi/abs/10.1145/3699538.3699567",
-    venue: {
-      name: "Koli Calling 2024",
-      href: "https://www.kolicalling.fi/",
-    },
-    authors: [
-      matinYarmand, dayeNam, danielProl, aliAhmadi, jamessPrather, 
-      michaelHilton, sruti, aminAlipour
-    ],
-    year: 2024,
-    type: "Conference",
-  },
-  {
     title: "From prompts to propositions: A logic-based lens on student-llm interactions",
     href: "https://arxiv.org/abs/2504.18691",
     venue: {
@@ -93,6 +79,20 @@ const pubs: Publication[] = [
     ],
     year: 2025,
     type: "Preprint",
+  },
+  {
+    title: "Student-AI Interaction: A Case Study of CS1 students",
+    href: "https://dl.acm.org/doi/abs/10.1145/3699538.3699567",
+    venue: {
+      name: "Koli Calling 2024",
+      href: "https://www.kolicalling.fi/",
+    },
+    authors: [
+      matinYarmand, dayeNam, danielProl, aliAhmadi, jamessPrather, 
+      michaelHilton, sruti, aminAlipour
+    ],
+    year: 2024,
+    type: "Conference",
   },
 ];
 
