@@ -28,7 +28,7 @@
   "scripts": {
     "check": "prettier --check . && tsc",
     "format": "prettier --write .",
-    "build": "tsx build.ts",
+    "build": "node --loader ts-node/esm build.ts",
     "dev": "live-server dist --verbose",
     "serve": "live-server dist --verbose"
   }
