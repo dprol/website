@@ -85,12 +85,12 @@ export const indexHtml = ({
               <h3 class="year">2025</h3>
             </div>
             <p>
-              Buddy is a VS Code extension that helps students better understand programming concepts.
+              Buddy is a VS Code extension that helps students better understand programming problems.
             </p>
           </a>
           <a href="https://uhcsed.web.app/">
             <div class="toy">
-              <h3>Research Group Project Website</h3>
+              <h3>Research Group Website</h3>
               <h3 class="year">2025</h3>
             </div>
             <p>
