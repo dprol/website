@@ -10,7 +10,7 @@ const author = (name: string, href: string): Author => ({ name, href });
 // Authors from the publications
 const danielProl = author("Daniel Prol", "/");
 const aminAlipour = author("Amin Alipour", "https://www.aminalipour.com/");
-const jamessPrather = author("James Prather", "https://www.jamessprather.com/");
+const jamessPrather = author("James Prather", "https://jamesprather.com/");
 const paulDenny = author("Paul Denny", "https://www.cs.auckland.ac.nz/~paul/");
 const juhoLeinonen = author("Juho Leinonen", "https://juholeinonen.com/");
 const aayush = author("Aayush Kumar", "https://www.linkedin.com/in/aayush-kumar-05a990213/");
