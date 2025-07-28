@@ -71,7 +71,7 @@ const pubs: Publication[] = [
       href: "https://www.kolicalling.fi/",
     },
     authors: [
-      matinYarmand, dayeNam, danielProl, aliAhmadi, jamessPrather, 
+      dayeNam, danielProl, jamessPrather, 
       michaelHilton, sruti, aminAlipour
     ],
     year: 2024,
