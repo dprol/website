@@ -45,7 +45,7 @@ export const indexHtml = ({
           <h1 class="name">Daniel Prol</h1>
         </div>
         <div class="socials">
-          <a class="fa fa-envelope fa-2x" href="mailto:estep@cmu.edu"></a>
+          <a class="fa fa-envelope fa-2x" href="mailto:dprol@uh.edu"></a>
           <a
             class="fa-brands fa-github fa-2x"
             href="https://github.com/samestep"
@@ -72,104 +72,46 @@ export const indexHtml = ({
           ></a>
         </div>
         <p>
-  Hi! <span class="wave">👋</span> I'm Daniel{" "}
-  <a class="pronouns" href="https://pronouns.org/he-him">
-    (he/him)
-  </a>
-  . I'm a first-year PhD student in{" "}
-  <a href="https://uhcsed.web.app/">CS</a> at UH, advised by{" "}
+  Hi! <span class="wave">👋</span> I'm Daniel. I'm a first-year PhD student in CS at the University of Houston, advised by{" "}
   <a href="https://www.aminalipour.com/">Amin Alipour</a>. I do
   research in <span class="topic">Computing Education</span> (you
-  should <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
-  !). Here are some of my projects:
-</p>
-        <ul>
-          <li>
-            <a href="https://github.com/gradbench/gradbench">GradBench</a> is an
-            extensible benchmark suite for comparing the performance of
-            differentiable programming tools across domains. We use
-            containerization and a shared communication protocol to simplify
-            installation and usage of many tools across many programming
-            languages, building this up as a shared resource for the
-            differentiable programming community to maintain together as we move
-            forward.
-          </li>
-          <li>
-            <a href="https://github.com/samestep/floretta">Floretta</a> is a
-            work-in-progress program transformation that takes a{" "}
-            <a href="https://webassembly.org/">Wasm</a> module and augments it
-            to compute gradients. Also, Floretta can itself be compiled to Wasm
-            and included in a webpage as <code>floretta.wasm.gz</code> which is
-            smaller than 50 kilobytes! The goal is to provide a tool which
-            (similar to <a href="https://enzyme.mit.edu/">Enzyme</a>) operates
-            over a well-supported low-level representation, while also providing
-            the extreme portability of Wasm.
-          </li>
-          <li>
-            <a href="https://github.com/rose-lang/rose">Rose</a> is the core
-            engine for differentiable programming inside{" "}
-            <a href="https://penrose.cs.cmu.edu/">Penrose</a>, engineered for
-            performance in the interactive web setting. We use JavaScript as a
-            host language for metaprogramming, and (similar to{" "}
-            <a href="https://jax.readthedocs.io/">JAX</a>) use just-in-time
-            compilation to get good performance. Unlike existing tools, we
-            drastically reduce compilation time by allowing explicit definition
-            of composable functions. Check out my publications list below for
-            our paper in ECOOP 2024!
-          </li>
-        </ul>
-        <p>
-          Outside of work, I love{" "}
-          <a href="https://ironcityboulders.com/">bouldering</a>, performing{" "}
-          <a href="https://www.arcadecomedytheater.com/">improv</a>{" "}
-          <a href="https://www.theglitterboxtheater.com/">comedy</a>, and
-          baking. I'm also always looking for music and book recommendations,
-          and trying to get my friends to join{" "}
-          <a href="https://letterboxd.com/">Letterboxd</a> because it lets us
-          take the set intersection of the movies <em>you</em> want to watch
-          with the movies <em>I</em> want to watch (how cool is that?)
-        </p>
-        <h2>Webapps</h2>
-        <p>Here are a few toys I've made over the years.</p>
+  can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
+  !), with a particular focus on programming education and Human-AI interaction.</p>
+
+  <p>Before that, I worked for 10 years in various positions in industry (My LinkedIn profile goes into more details about the professional-ish part of my life). I'm also very passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
+        <h2>Publications</h2>
+        {pubs}
+        <h2>Projects</h2>
+        <p>Here are a few projects I've made over the years.</p>
         <div class="stuff">
-          <a href="https://samestep.github.io/minkowski/">
+          <a href="https://marketplace.visualstudio.com/items?itemName=dprol.buddy-ai">
             <div class="toy">
-              <h3>Minkowski sum</h3>
-              <h3 class="year">2023</h3>
+              <h3>Buddy</h3>
+              <h3 class="year">2025</h3>
             </div>
             <p>
-              Look, some polygons! Drag them around to see their Minkowski sum.
-              (Still a work in progress.)
+              Buddy is a VS Code extension that helps students better understand programming problems.
             </p>
           </a>
-          <a href="https://samestep.github.io/elliptic-curves/">
+          <a href="https://uhcsed.web.app/">
             <div class="toy">
-              <h3>Elliptic curves</h3>
-              <h3 class="year">2017</h3>
+              <h3>Research Group Project Website</h3>
+              <h3 class="year">2025</h3>
             </div>
             <p>
-              See how the elliptic curve group law is associative: click three
-              points to get each of their pairwise sums, then click the
-              magnifying glass to see that all the three-way sums converge at
-              the same point. Hit escape to reset or use the box in the top-left
-              to select alternative parameters for the curve.
+              Computing Education at University of Houston includes an interdisciplinary group of researchers and PhD students who study how students learn computing, effective pedagogies for teaching computing and effective learning at scale.
             </p>
           </a>
-          <a href="https://samestep.github.io/lambda-calculus/">
+          <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
             <div class="toy">
-              <h3>Lambda calculus</h3>
-              <h3 class="year">2016</h3>
+              <h3>SaaS Product Chat</h3>
+              <h3 class="year">2018</h3>
             </div>
             <p>
-              Type Lispy lambda calculus expressions like
-              <code>((λ x x) 42)</code> to see their reduced form. Backslash
-              automatically becomes <code>λ</code>, and parentheses are
-              automatched.
+              SaaS Product Chat was a video podcast in Spanish about topics related to software as a service where we invited speakers from the Latam/Spain technology industry.
             </p>
           </a>
         </div>
-        <h2>Publications</h2>
-        {pubs}
         <h2>Blog</h2>
         {blog}
       </main>
@@ -200,14 +142,14 @@ export const blogHtml = ({ hot, css, title, date, body }: Post) => (
       <link rel="stylesheet" href="/blog.css" />
       {css ? <link rel="stylesheet" href="style.css" /> : <></>}
       {/* Hot reloading disabled for production build */}
-      <title>{title} | Sam Estep</title>
+      <title>{title} | Daniel Prol</title>
     </head>
     <body>
       <main>
         <h1>{title}</h1>
         <p>
           <em>
-            by <a href="/">Sam Estep</a>, {date}
+            by <a href="/">Daniel Prol</a>, {date}
           </em>
         </p>
         <div id="body">{body}</div>
