@@ -138,13 +138,27 @@ export const logo = () => {
 };
 
 const generate = async () => {
-  for (const file of ["all.css", "blog.css", "index.css", "photo.jpg"]) {
-    await copyFile(`src/${file}`, `${out}/${file}`);
+  // Copy static files - check which ones actually exist
+  const staticFiles = ["all.css", "blog.css", "index.css", "photo.jpeg"];
+  
+  for (const file of staticFiles) {
+    try {
+      if (await exists(`src/${file}`)) {
+        await copyFile(`src/${file}`, `${out}/${file}`);
+      } else {
+        console.log(`Warning: src/${file} not found, skipping...`);
+      }
+    } catch (error) {
+      console.log(`Warning: Could not copy src/${file}:`, String(error));
+    }
   }
 
   const { svg, png } = logo();
   await writeFile(`${out}/logo.svg`, svg);
   await writeFile(`${out}/icon.png`, png);
+
+  // Only show published blog posts in the index
+  const publishedPosts = Object.entries(blogPosts).filter(([_, { date }]) => date !== undefined);
 
   await writeFile(
     `${out}/index.html`,
@@ -153,8 +167,7 @@ const generate = async () => {
         pubs: publications(),
         blog: (
           <ul>
-            {Object.entries(blogPosts)
-              .filter(([_, { date }]) => date !== undefined)
+            {publishedPosts
               .map(([id, { date, title }]) => {
                 const name = escapeHTML(title);
                 return (
@@ -169,28 +182,43 @@ const generate = async () => {
     ),
   );
 
+  // Only generate pages for posts that actually have content
   for (const [name, { date, title }] of Object.entries(blogPosts)) {
+    const markdownFile = `src/blog/${name}/index.md`;
+    
+    // Check if the markdown file exists
+    if (!(await exists(markdownFile))) {
+      console.log(`Warning: ${markdownFile} not found, skipping post "${title}"`);
+      continue;
+    }
+
     try {
       await fs.cp(`src/blog/${name}/assets`, `${out}/blog/${name}/assets`, {
         recursive: true,
       });
     } catch (_) {}
-    const body = (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: await getBlogPostBody(md, name),
-        }}
-      ></div>
-    );
-    const style = `src/blog/${name}/style.css`;
-    const css = await exists(style);
-    if (css) await fs.cp(style, `${out}/blog/${name}/style.css`);
-    await writeFile(
-      `${out}/blog/${name}/index.html`,
-      await renderHtml(
-        blogHtml({ css, date: date ?? "unpublished", title, body }),
-      ),
-    );
+    
+    try {
+      const body = (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: await getBlogPostBody(md, name),
+          }}
+        ></div>
+      );
+      const style = `src/blog/${name}/style.css`;
+      const css = await exists(style);
+      if (css) await fs.cp(style, `${out}/blog/${name}/style.css`);
+      await writeFile(
+        `${out}/blog/${name}/index.html`,
+        await renderHtml(
+          blogHtml({ css, date: date ?? "unpublished", title, body }),
+        ),
+      );
+      console.log(`✅ Generated blog post: ${name}`);
+    } catch (error) {
+      console.log(`❌ Error generating blog post "${name}":`, String(error));
+    }
   }
 };
 
