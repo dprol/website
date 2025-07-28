@@ -139,7 +139,7 @@ export const logo = () => {
 
 const generate = async () => {
   // Copy static files - check which ones actually exist
-  const staticFiles = ["all.css", "blog.css", "index.css", "photo.jpeg"];
+  const staticFiles = ["all.css", "blog.css", "index.css", "photo.jpg"];
   
   for (const file of staticFiles) {
     try {
