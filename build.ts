@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
+#!/usr/bin/env node
 import { build } from "./common";
-
 await build();

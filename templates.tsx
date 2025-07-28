@@ -1,7 +1,4 @@
 import { JSX } from "preact";
-import { importText } from "./util";
-
-const hotness = await importText("hot.js");
 
 const Head = () => (
   <>
@@ -202,16 +199,7 @@ export const blogHtml = ({ hot, css, title, date, body }: Post) => (
       />
       <link rel="stylesheet" href="/blog.css" />
       {css ? <link rel="stylesheet" href="style.css" /> : <></>}
-      {hot === undefined ? (
-        <></>
-      ) : (
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{
-            __html: `const url = ${JSON.stringify(hot)};\n${hotness}`,
-          }}
-        ></script>
-      )}
+      {/* Hot reloading disabled for production build */}
       <title>{title} | Sam Estep</title>
     </head>
     <body>

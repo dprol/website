@@ -3,6 +3,7 @@ import hljs from "highlight.js";
 import markdownit from "markdown-it";
 import markdownitKatex from "markdown-it-katex";
 import * as fs from "node:fs/promises";
+import * as path from "node:path";
 import { JSX } from "preact";
 import { render } from "preact-render-to-string";
 import prettier from "prettier";
@@ -10,7 +11,49 @@ import { Content } from "./blog";
 import { Logo } from "./logo";
 import { publications } from "./publications";
 import { blogHtml, indexHtml } from "./templates";
-import { importText } from "./util";
+
+// Node.js equivalent of Bun's importText
+const importText = async (filename: string): Promise<string> => {
+  return await fs.readFile(filename, 'utf-8');
+};
+
+// Node.js equivalent of Bun.escapeHTML
+const escapeHTML = (str: string): string => {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+};
+
+// Node.js equivalent of Bun.write
+const writeFile = async (filePath: string, data: string | Uint8Array | Blob): Promise<void> => {
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  
+  if (data instanceof Blob) {
+    const arrayBuffer = await data.arrayBuffer();
+    await fs.writeFile(filePath, new Uint8Array(arrayBuffer));
+  } else {
+    await fs.writeFile(filePath, data);
+  }
+};
+
+// Node.js equivalent of Bun.file().copyTo()
+const copyFile = async (src: string, dest: string): Promise<void> => {
+  await fs.mkdir(path.dirname(dest), { recursive: true });
+  await fs.copyFile(src, dest);
+};
+
+// Node.js equivalent of fs.exists (deprecated but used in original)
+const exists = async (filePath: string): Promise<boolean> => {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 export const renderHtml = async (element: JSX.Element): Promise<string> =>
   await prettier.format(`<!doctype html>\n${render(element)}`, {
@@ -22,7 +65,7 @@ const out = "out";
 const getBlogPostContent = async (
   name: string,
 ): Promise<Map<string, string>> => {
-  if (!(await fs.exists(`src/blog/${name}/content.tsx`))) return new Map();
+  if (!(await exists(`src/blog/${name}/content.tsx`))) return new Map();
   const content: Content = (await import(`./src/blog/${name}/content`)).content;
   return new Map(
     Object.entries(await content()).map(([k, v]) => [k, render(v)]),
@@ -95,15 +138,15 @@ export const logo = () => {
 };
 
 const generate = async () => {
-  for (const file of ["all.css", "blog.css", "index.css", "photo.jpeg"]) {
-    await Bun.write(`${out}/${file}`, Bun.file(`src/${file}`));
+  for (const file of ["all.css", "blog.css", "index.css", "photo.jpg"]) {
+    await copyFile(`src/${file}`, `${out}/${file}`);
   }
 
   const { svg, png } = logo();
-  await Bun.write(`${out}/logo.svg`, svg);
-  await Bun.write(`${out}/icon.png`, png);
+  await writeFile(`${out}/logo.svg`, svg);
+  await writeFile(`${out}/icon.png`, png);
 
-  await Bun.write(
+  await writeFile(
     `${out}/index.html`,
     await renderHtml(
       indexHtml({
@@ -113,7 +156,7 @@ const generate = async () => {
             {Object.entries(blogPosts)
               .filter(([_, { date }]) => date !== undefined)
               .map(([id, { date, title }]) => {
-                const name = Bun.escapeHTML(title);
+                const name = escapeHTML(title);
                 return (
                   <li>
                     {date} <a href={`/blog/${id}/`}>{name}</a>
@@ -140,9 +183,9 @@ const generate = async () => {
       ></div>
     );
     const style = `src/blog/${name}/style.css`;
-    const css = await fs.exists(style);
+    const css = await exists(style);
     if (css) await fs.cp(style, `${out}/blog/${name}/style.css`);
-    await Bun.write(
+    await writeFile(
       `${out}/blog/${name}/index.html`,
       await renderHtml(
         blogHtml({ css, date: date ?? "unpublished", title, body }),
