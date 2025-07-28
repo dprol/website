@@ -78,7 +78,7 @@ export const indexHtml = ({
   can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
   !), with a particular focus on programming education and Human-AI interaction.</p>
 
-  <p>Before that, I worked for 10 years in various positions in industry (My LinkedIn profile goes into more details about the professional-ish part of my life). I'm also very passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
+  <p>Before that, I worked for 10 years in various positions in industry (my LinkedIn profile goes into more details about the professional-ish part of my life). I'm also very passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
         <h2>Publications</h2>
         {pubs}
         <h2>Projects</h2>
@@ -99,7 +99,16 @@ export const indexHtml = ({
               <h3 class="year">2025</h3>
             </div>
             <p>
-              Computing Education at University of Houston includes an interdisciplinary group of researchers and PhD students who study how students learn computing, effective pedagogies for teaching computing and effective learning at scale.
+              See who I work with and what we do in our research group.
+            </p>
+          </a>
+          <a href="https://evangelio.app/">
+            <div class="toy">
+              <h3>Catholic Podcasts</h3>
+              <h3 class="year">2024</h3>
+            </div>
+            <p>
+              Here you will find a selection of podcasts in Spanish to let Jesus enlighten your daily routine.
             </p>
           </a>
           <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
