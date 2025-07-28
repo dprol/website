@@ -48,27 +48,25 @@ export const indexHtml = ({
           <a class="fa fa-envelope fa-2x" href="mailto:dprol@uh.edu"></a>
           <a
             class="fa-brands fa-github fa-2x"
-            href="https://github.com/samestep"
+            href="https://github.com/dprol"
           ></a>
           <a
             class="fa-brands fa-linkedin fa-2x"
-            href="https://www.linkedin.com/in/sam-estep/"
+            href="https://www.linkedin.com/in/dannyprol/"
           ></a>
-          <a
-            class="fa-brands fa-orcid fa-2x"
-            href="https://orcid.org/0000-0002-7107-7043"
-          ></a>
-          <a
-            class="fa-brands fa-stack-overflow fa-2x"
-            href="https://stackoverflow.com/users/5044950/sam-estep"
-          ></a>
-          <a
-            class="fa-brands fa-twitter fa-2x"
-            href="https://twitter.com/sgestep"
-          ></a>
+          <a class="fa-brands fa-substack fa-2x"
+  href="https://computingeducationthings.substack.com/"
+  ></a>
+
+  <a class="fa-brands fa-google-scholar fa-2x"
+  href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=ANZ5fUOMurZyH0skWC2FvVythJGco0VwY0QH9tkZ0-R7dg2j5bQ8FLTwb4eRjDZqwWeCI4K1g0WM_MIN6ZarjA&user=mgKTgWcAAAAJ"
+></a>
+          <a class="fa-brands fa-x-twitter fa-2x"
+  href="https://x.com/DannyProl"
+></a>
           <a
             class="fa-brands fa-youtube fa-2x"
-            href="https://youtube.com/@sam-estep"
+            href="https://www.youtube.com/@ProlDaniel/videos"
           ></a>
         </div>
         <p>
@@ -76,7 +74,7 @@ export const indexHtml = ({
   <a href="https://www.aminalipour.com/">Amin Alipour</a>. I do
   research in <span class="topic">Computing Education</span> (you
   can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
-  !), with a particular focus on programming education and Human-AI interaction.</p>
+  !), with a particular focus on Programming Education and Human-AI Interaction.</p>
 
   <p>Before that, I worked for 10 years in various positions in industry (my LinkedIn profile goes into more details about the professional-ish part of my life). I'm also very passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
         <h2>Publications</h2>
@@ -104,7 +102,7 @@ export const indexHtml = ({
           </a>
           <a href="https://evangelio.app/">
             <div class="toy">
-              <h3>Catholic Podcasts</h3>
+              <h3>Catholic Podcasts Website</h3>
               <h3 class="year">2024</h3>
             </div>
             <p>
