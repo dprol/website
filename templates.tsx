@@ -39,13 +39,13 @@ export const indexHtml = ({
         referrerpolicy="no-referrer"
       />
       <link rel="stylesheet" href="/index.css" />
-      <title>Sam Estep</title>
+      <title>Daniel Prol</title>
     </head>
     <body>
       <main>
         <div class="me">
           <img class="photo" src="photo.jpeg" width="100" height="100" />
-          <h1 class="name">Sam Estep</h1>
+          <h1 class="name">Daniel Prol</h1>
         </div>
         <div class="socials">
           <a class="fa fa-envelope fa-2x" href="mailto:estep@cmu.edu"></a>
