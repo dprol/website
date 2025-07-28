@@ -19,7 +19,7 @@ const dayeNam = author("Daye Nam", "https://dayenam.com/");
 const michaelHilton = author("Michael Hilton", "https://www.cs.cmu.edu/~mhilton/");
 const aliAlfageeh = author("Ali Alfageeh", "https://www.linkedin.com/in/ali-alfageeh-182755132/");
 const sadeghAlMahdi = author("Mahdi Kazemi", "https://www.linkedin.com/in/sadegh-almahdi-kazemi/");
-const matinAmoozadeh = author("Matin Amoozadeh", "https://www.matinamoozadeh.com/");
+const matinAmoozadeh = author("Matin Amoozadeh", "https://www.linkedin.com/in/matin-amoozadeh-87b8231b3/");
 const soutiChattopadhyay = author("Souti Chattopadhyay", "https://viterbi.usc.edu/directory/faculty/Chattopadhyay/Souti");
 
 interface Venue {
@@ -71,7 +71,7 @@ const pubs: Publication[] = [
       href: "https://www.kolicalling.fi/",
     },
     authors: [
-      dayeNam, danielProl, jamessPrather, 
+      matinAmoozadeh, dayeNam, danielProl, aliAlfageeh, jamessPrather, 
       michaelHilton, sruti, aminAlipour
     ],
     year: 2024,
