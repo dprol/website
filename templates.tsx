@@ -73,7 +73,7 @@ export const indexHtml = ({
   can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
   !), with a particular focus on Programming Education, AI for Computing Education and Human-AI Interaction.</p>
 
-  <p>Before that, I worked for 10 years in various industry positions (my LinkedIn profile has more details about the "industry side" of my life). I'm also passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
+  <p>Before beginning graduate school, I worked for 10 years in various industry positions (my LinkedIn profile has more details about the "industry side" of my life). I'm also passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
         <h2>Publications</h2>
         {pubs}
         <h2>Projects</h2>
