@@ -134,9 +134,6 @@ export const logo = () => {
   const svg = render(<Logo />);
   return {
     svg,
-    png: new Blob([
-      new Resvg(svg, { fitTo: { mode: "width", value: 192 } }).render().asPng(),
-    ]),
   };
 };
 
@@ -156,9 +153,16 @@ const generate = async () => {
     }
   }
 
-  const { svg, png } = logo();
+  const { svg } = logo();
   await writeFile(`${out}/logo.svg`, svg);
-  await writeFile(`${out}/icon.png`, png);
+
+  // Copy photo.jpg as the icon instead of generating icon.png
+  if (await exists("src/photo.jpg")) {
+    await copyFile("src/photo.jpg", `${out}/icon.jpg`);
+    console.log("✅ Using photo.jpg as icon");
+  } else {
+    console.log("Warning: src/photo.jpg not found, no icon will be available");
+  }
 
   // Only show published blog posts in the index
   const publishedPosts = Object.entries(blogPosts)

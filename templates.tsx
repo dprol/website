@@ -3,7 +3,7 @@ import { JSX } from "preact";
 const Head = () => (
   <>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="icon" type="image/jpeg" href="/icon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
