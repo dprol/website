@@ -12,12 +12,11 @@ import { Logo } from "./logo";
 import { publications } from "./publications";
 import { blogHtml, indexHtml } from "./templates";
 
-// Node.js equivalent of Bun's importText
 const importText = async (filename: string): Promise<string> => {
   return await fs.readFile(filename, 'utf-8');
 };
 
-// Node.js equivalent of Bun.escapeHTML
+
 const escapeHTML = (str: string): string => {
   return str
     .replace(/&/g, '&amp;')
@@ -27,7 +26,7 @@ const escapeHTML = (str: string): string => {
     .replace(/'/g, '&#39;');
 };
 
-// Node.js equivalent of Bun.write
+
 const writeFile = async (filePath: string, data: string | Uint8Array | Blob): Promise<void> => {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
   
@@ -39,13 +38,13 @@ const writeFile = async (filePath: string, data: string | Uint8Array | Blob): Pr
   }
 };
 
-// Node.js equivalent of Bun.file().copyTo()
+
 const copyFile = async (src: string, dest: string): Promise<void> => {
   await fs.mkdir(path.dirname(dest), { recursive: true });
   await fs.copyFile(src, dest);
 };
 
-// Node.js equivalent of fs.exists (deprecated but used in original)
+
 const exists = async (filePath: string): Promise<boolean> => {
   try {
     await fs.access(filePath);
@@ -138,7 +137,7 @@ export const logo = () => {
 };
 
 const generate = async () => {
-  // Copy static files - check which ones actually exist
+
   const staticFiles = ["all.css", "blog.css", "index.css", "photo.jpg"];
   
   for (const file of staticFiles) {
@@ -156,7 +155,6 @@ const generate = async () => {
   const { svg } = logo();
   await writeFile(`${out}/logo.svg`, svg);
 
-  // Copy photo.jpg as the icon instead of generating icon.png
   if (await exists("src/photo.jpg")) {
     await copyFile("src/photo.jpg", `${out}/icon.jpg`);
     console.log("✅ Using photo.jpg as icon");
@@ -164,7 +162,6 @@ const generate = async () => {
     console.log("Warning: src/photo.jpg not found, no icon will be available");
   }
 
-  // Only show published blog posts in the index
   const publishedPosts = Object.entries(blogPosts)
     .filter(([_, { date }]) => date !== undefined)
     .sort(([,a], [,b]) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
@@ -192,47 +189,6 @@ const generate = async () => {
   );
 
   console.log("✅ Generated index with external blog links");
-  
-  // Comentado: Ya no generamos páginas internas porque todos los posts son externos
-  /*
-  for (const [name, { date, title }] of Object.entries(blogPosts)) {
-    const markdownFile = `src/blog/${name}/index.md`;
-    
-    // Check if the markdown file exists
-    if (!(await exists(markdownFile))) {
-      console.log(`Warning: ${markdownFile} not found, skipping post "${title}"`);
-      continue;
-    }
-
-    try {
-      await fs.cp(`src/blog/${name}/assets`, `${out}/blog/${name}/assets`, {
-        recursive: true,
-      });
-    } catch (_) {}
-    
-    try {
-      const body = (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: await getBlogPostBody(md, name),
-          }}
-        ></div>
-      );
-      const style = `src/blog/${name}/style.css`;
-      const css = await exists(style);
-      if (css) await fs.cp(style, `${out}/blog/${name}/style.css`);
-      await writeFile(
-        `${out}/blog/${name}/index.html`,
-        await renderHtml(
-          blogHtml({ css, date: date ?? "unpublished", title, body }),
-        ),
-      );
-      console.log(`✅ Generated blog post: ${name}`);
-    } catch (error) {
-      console.log(`❌ Error generating blog post "${name}":`, String(error));
-    }
-  }
-  */
 };
 
 export const build = async () => {
