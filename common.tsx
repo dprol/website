@@ -112,7 +112,7 @@ export const blogPosts: Record<string, BlogPost> = {
     href: "https://blog.danielprol.com/posts/learning-code"
   },
   "podcasts": {
-    title: "Podcasts",
+    title: "My Favorite Software Engineering Podcasts [2025 Edition]",
     date: "2024-05-10",
     href: "https://blog.danielprol.com/posts/podcasts"
   }
