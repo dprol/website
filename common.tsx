@@ -113,7 +113,7 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "podcasts": {
     title: "My Favorite Software Engineering Podcasts [2025 Edition]",
-    date: "2024-05-10",
+    date: "2025-09-07",
     href: "https://blog.danielprol.com/posts/podcasts"
   }
 };
