@@ -16,7 +16,6 @@ const importText = async (filename: string): Promise<string> => {
   return await fs.readFile(filename, 'utf-8');
 };
 
-
 const escapeHTML = (str: string): string => {
   return str
     .replace(/&/g, '&amp;')
@@ -25,7 +24,6 @@ const escapeHTML = (str: string): string => {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 };
-
 
 const writeFile = async (filePath: string, data: string | Uint8Array | Blob): Promise<void> => {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
@@ -38,12 +36,10 @@ const writeFile = async (filePath: string, data: string | Uint8Array | Blob): Pr
   }
 };
 
-
 const copyFile = async (src: string, dest: string): Promise<void> => {
   await fs.mkdir(path.dirname(dest), { recursive: true });
   await fs.copyFile(src, dest);
 };
-
 
 const exists = async (filePath: string): Promise<boolean> => {
   try {
@@ -103,17 +99,22 @@ export const blogPosts: Record<string, BlogPost> = {
   "koli-calling": { 
     title: "Koli Calling 2024 Trip Report",
     date: "2024-11-17", 
-    href: "https://dprol.github.io/blog/hydejack/2024-11-17-koli/"
+    href: "https://blog.danielprol.com/posts/koli"
   },
   "future-software-development": {
     title: "The Future of Software Development and the Role of Computing Education with LLMs",
     date: "2024-05-22",
-    href: "https://dprol.github.io/blog/hydejack/2024-05-22-llms-junior-devs/"
+    href: "https://blog.danielprol.com/posts/dev-llm"
   },
   "ai-changed-coding": {
     title: "How AI changed the way we learn to code", 
     date: "2024-05-13",
-    href: "https://dprol.github.io/blog/hydejack/2024-05-13-ai-education/"
+    href: "https://blog.danielprol.com/posts/learning-code"
+  },
+  "podcasts": {
+    title: "Podcasts",
+    date: "2024-05-10",
+    href: "https://blog.danielprol.com/posts/podcasts"
   }
 };
 
@@ -137,7 +138,6 @@ export const logo = () => {
 };
 
 const generate = async () => {
-
   const staticFiles = ["all.css", "blog.css", "index.css", "photo.jpg"];
   
   for (const file of staticFiles) {
@@ -162,8 +162,9 @@ const generate = async () => {
     console.log("Warning: src/photo.jpg not found, no icon will be available");
   }
 
+  // Fixed: properly filter and sort published posts
   const publishedPosts = Object.entries(blogPosts)
-    .filter(([_, { date }]) => date !== undefined)
+    .filter(([_, post]) => post.date !== undefined)
     .sort(([,a], [,b]) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
 
   await writeFile(
@@ -173,11 +174,11 @@ const generate = async () => {
         pubs: publications(),
         blog: (
           <ul>
-            {publishedPosts.map(([id, { date, title, href }]) => {
+            {publishedPosts.map(([id, post]) => {
               return (
                 <li key={id}>
-                  {date} <a href={href} target="_blank" rel="noopener noreferrer">
-                    {title}
+                  {post.date} <a href={post.href} target="_blank" rel="noopener noreferrer">
+                    {post.title}
                   </a>
                 </li>
               );
