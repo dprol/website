@@ -97,7 +97,7 @@ export const indexHtml = ({
               Learn about who I work with and what we do in our research group.
             </p>
           </a>
-          <a href="https://evangelio.app/">
+          <a href="https://github.com/dprol/Evangelio">
             <div class="toy">
               <h3>Catholic Podcasts Website</h3>
               <h3 class="year">2024</h3>
