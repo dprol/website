@@ -71,7 +71,7 @@ export const indexHtml = ({
   <a href="https://www.aminalipour.com/">Amin Alipour</a> and <a href="https://www.cs.cmu.edu/~mhilton/">Michael Hilton</a>. I do
   research in <span class="topic">Computing Education</span> (you
   can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
-  !), with a particular focus on Computer Science Education, AI-assisted programming and Human-AI Interaction.</p>
+  !), with a particular focus on Computer Science Education, Programming Education, Educational data mining, AI-assisted programming and Human-Centered AI.</p>
 
   <p>Before beginning graduate school, I worked for 10 years in various industry positions (my LinkedIn profile has more details about the "industry side" of my life). I'm also passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
         <h2>Publications</h2>
