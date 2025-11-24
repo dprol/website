@@ -79,9 +79,9 @@ export const indexHtml = ({
         <h2>Projects</h2>
         <p>Here are a few projects I've worked on over the years.</p>
         <div class="stuff">
-          <a href="https://marketplace.visualstudio.com/items?itemName=dprol.buddy-ai">
+          <a href="https://reunir.unir.net/handle/123456789/18436">
             <div class="toy">
-              <h3>Buddy</h3>
+              <h3>AI-powered programming assistant for coding students</h3>
               <h3 class="year">2025</h3>
             </div>
             <p>
@@ -97,13 +97,13 @@ export const indexHtml = ({
               Learn about who I work with and what we do in our research group.
             </p>
           </a>
-          <a href="https://github.com/dprol/Evangelio">
+          <a href="https://blog.danielprol.com/">
             <div class="toy">
-              <h3>Catholic Podcasts Website</h3>
-              <h3 class="year">2024</h3>
+              <h3>My occasional blog</h3>
+              <h3 class="year">2025</h3>
             </div>
             <p>
-              A curated selection of Spanish-language podcasts to bring Jesus into your daily routine.
+              Includes software engineering deep dives, technical write-ups, and reflections on learning, programming, and AI.
             </p>
           </a>
           <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
