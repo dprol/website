@@ -108,7 +108,7 @@ export const indexHtml = ({
           </a>
           <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
             <div class="toy">
-              <h3>SaaS Product Chat</h3>
+              <h3>Podcast Host</h3>
               <h3 class="year">2018</h3>
             </div>
             <p>
