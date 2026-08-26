@@ -22,6 +22,13 @@ const sadeghAlMahdi = author("Mahdi Kazemi", "https://www.linkedin.com/in/sadegh
 const matinAmoozadeh = author("Matin Amoozadeh", "https://www.linkedin.com/in/matin-amoozadeh-87b8231b3/");
 const soutiChattopadhyay = author("Souti Chattopadhyay", "https://viterbi.usc.edu/directory/faculty/Chattopadhyay/Souti");
 
+// ITiCSE 2026 WG10 leaders
+// TODO: completar la lista de miembros del WG y sus enlaces desde la pagina de ACM
+const peterOhmann = author("Peter Ohmann", "");
+const edNovak = author("Ed Novak", "");
+const scottReckinger = author("Scott Reckinger", "");
+const shanonReckinger = author("Shanon Reckinger", "https://dl.acm.org/profile/99658741464");
+
 interface Venue {
   name: string;
   href: string;
@@ -38,7 +45,30 @@ interface Publication {
 
 const pubs: Publication[] = [
   {
-    title: "To Google or To ChatGPT? A Comparison of CS2 Students Information Gathering Approaches and Outcomes",
+    title: "Teamwork in Computing Education: Skills, Values, and Virtues",
+    href: "https://dl.acm.org/doi/10.1145/3803401.3812054",
+    venue: {
+      name: "ITiCSE 2026",
+      href: "https://iticse.acm.org/2026/",
+    },
+    // TODO: anadir el resto de miembros del WG10 en el orden de la publicacion
+    authors: [peterOhmann, edNovak, scottReckinger, shanonReckinger, danielProl],
+    year: 2026,
+    type: "Abstract",
+  },
+  {
+    title: "Asistente de IA para Visual Studio Code para el aprendizaje de programación",
+    href: "https://reunir.unir.net/handle/123456789/18436",
+    venue: {
+      name: "Re-UNIR",
+      href: "https://reunir.unir.net/",
+    },
+    authors: [danielProl],
+    year: 2025,
+    type: "Thesis",
+  },
+  {
+    title: "Web vs. LLMs: An Empirical Study of Learning Behaviors of CS2 Students",
     href: "https://arxiv.org/abs/2501.11935",
     venue: {
       name: "arXiv Preprint",
@@ -49,19 +79,19 @@ const pubs: Publication[] = [
     type: "Preprint",
   },
   {
-    title: "From prompts to propositions: A logic-based lens on student-llm interactions",
-    href: "https://arxiv.org/abs/2504.18691",
+    title: "From Prompts to Propositions: A Logic-Based Lens on Student-LLM Interactions",
+    href: "https://dl.acm.org/doi/10.1145/3769994.3770004",
     venue: {
-      name: "arXiv Preprint",
-      href: "https://arxiv.org/",
+      name: "Koli Calling 2025",
+      href: "https://www.kolicalling.fi/",
     },
     authors: [
-      aliAlfageeh, sadeghAlMahdi, dayeNam, danielProl, matinAmoozadeh, 
-      soutiChattopadhyay, jamessPrather, paulDenny, juhoLeinonen, 
+      aliAlfageeh, sadeghAlMahdi, dayeNam, danielProl, matinAmoozadeh,
+      soutiChattopadhyay, jamessPrather, paulDenny, juhoLeinonen,
       michaelHilton, sruti, aminAlipour
     ],
     year: 2025,
-    type: "Preprint",
+    type: "Conference",
   },
   {
     title: "Student-AI Interaction: A Case Study of CS1 students",
@@ -71,7 +101,7 @@ const pubs: Publication[] = [
       href: "https://www.kolicalling.fi/",
     },
     authors: [
-      matinAmoozadeh, dayeNam, danielProl, aliAlfageeh, jamessPrather, 
+      matinAmoozadeh, dayeNam, danielProl, aliAlfageeh, jamessPrather,
       michaelHilton, sruti, aminAlipour
     ],
     year: 2024,
