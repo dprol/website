@@ -67,7 +67,7 @@ export const indexHtml = ({
           ></a>
         </div>
         <p>
-  Hi! <span class="wave">👋</span> I'm Daniel. I'm a second-year PhD student in CS at the University of Houston, advised by{" "}
+  Hi! <span class="wave">👋</span> I'm Daniel. I'm a second-year PhD student in Computer Science at the University of Houston, advised by{" "}
   <a href="https://www.aminalipour.com/">Amin Alipour</a> and <a href="https://www.cs.cmu.edu/~mhilton/">Michael Hilton</a>. I do
   research in <span class="topic">Computing Education</span> (you
   can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
