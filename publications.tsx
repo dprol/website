@@ -35,7 +35,7 @@ const pubs: Publication[] = [
     type: "Thesis",
   },
   {
-    title: "Web vs. LLMs: An Empirical Study of Learning Behaviors of CS2 Students",
+    title: "To Google or To ChatGPT? A Comparison of CS2 Students' Information Gathering Approaches and Outcomes",
     href: "https://arxiv.org/abs/2501.11935",
     venue: {
       name: "arXiv Preprint",
