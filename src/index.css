@@ -85,3 +85,7 @@
 .links a:hover {
   opacity: 0.75;
 }
+
+.links {
+  margin-bottom: 2.5rem;
+}
