@@ -57,7 +57,8 @@ export const indexHtml = ({ pubs }: { pubs: JSX.Element }) => (
               <a href="https://computingeducationthings.substack.com/">
                 follow me on Substack
               </a>
-              !).
+              !). I create and evaluate software tools for computer science
+              education.
             </p>
             <p>
               Before beginning graduate school, I worked for 10 years in various
@@ -143,11 +144,6 @@ export const indexHtml = ({ pubs }: { pubs: JSX.Element }) => (
                 <a href="https://uhcsed.web.app/">Research Group Website</a> —
                 Learn about who I work with and what we do in our research
                 group.
-              </li>
-              <li>
-                <a href="https://blog.danielprol.com/">My occasional blog</a> —
-                Software engineering deep dives, technical write-ups, and
-                reflections on learning, programming, and AI.
               </li>
               <li>
                 <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
