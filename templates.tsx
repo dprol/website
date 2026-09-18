@@ -100,13 +100,13 @@ export const indexHtml = ({ pubs }: { pubs: JSX.Element }) => (
               ></a>
               <a
                 class="fa-solid fa-newspaper"
-                href="https://computingeducationthings.substack.com/"
-                aria-label="Substack"
+                href="https://blog.danielprol.com/posts/"
+                aria-label="Blog"
               ></a>
               <a
                 class="substack"
-                href="https://blog.danielprol.com/posts/"
-                aria-label="Blog"
+                href="https://computingeducationthings.substack.com/"
+                aria-label="Substack"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
