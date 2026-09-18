@@ -110,11 +110,6 @@ export const indexHtml = ({
                 aria-label="Substack"
               ></a>
             </div>
-
-            <h4>Contact</h4>
-            <p>
-              email: <a href="mailto:dprol@uh.edu">dprol@uh.edu</a>
-            </p>
           </div>
 
           <div class="one-third column photo-column">
