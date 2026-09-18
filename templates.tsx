@@ -147,7 +147,7 @@ export const indexHtml = ({ pubs }: { pubs: JSX.Element }) => (
               </li>
               <li>
                 <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
-                  Podcast Host
+                  Co-creator and Podcast Host
                 </a>{" "}
                 — SaaS Product Chat was a Spanish-language video podcast
                 covering software-as-a-service topics, featuring speakers from
