@@ -25,9 +25,19 @@ export const indexHtml = ({
   pubs: JSX.Element;
   blog: JSX.Element;
 }) => (
-  <html lang="en-us">
+  <html lang="en">
     <head>
-      <Head />
+      <meta charset="utf-8" />
+      <title>Daniel Prol</title>
+      <meta name="description" content="Personal website of Daniel Prol" />
+      <meta name="author" content="Daniel Prol" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" type="image/jpeg" href="/icon.jpg" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Raleway:400,300,600"
+        rel="stylesheet"
+        type="text/css"
+      />
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -35,90 +45,122 @@ export const indexHtml = ({
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
       />
+      <link rel="stylesheet" href="/css/normalize.css" />
+      <link rel="stylesheet" href="/css/skeleton.css" />
       <link rel="stylesheet" href="/index.css" />
-      <title>Daniel Prol</title>
     </head>
     <body>
-      <main>
-        <div class="me">
-          <img class="photo" src="photo.jpg" width="100" height="100" />
-          <h1 class="name">Daniel Prol</h1>
-        </div>
-        <div class="socials">
-          <a class="fa fa-envelope fa-2x" href="mailto:dprol@uh.edu"></a>
-          <a
-            class="fa-brands fa-github fa-2x"
-            href="https://github.com/dprol"
-          ></a>
-          <a
-            class="fa-brands fa-linkedin fa-2x"
-            href="https://www.linkedin.com/in/dannyprol/"
-          ></a>
+      <div class="container">
+        <div class="row">
+          <div class="two-thirds column intro">
+            <h1>Daniel Prol</h1>
+            <p>
+              Hi, I'm Daniel! I'm a second-year PhD student in Computer Science
+              at the <a href="https://www.uh.edu/">University of Houston</a>,
+              advised by <a href="https://www.aminalipour.com/">Amin Alipour</a>{" "}
+              and <a href="https://www.cs.cmu.edu/~mhilton/">Michael Hilton</a>.
+              I do research in Computing Education (you can{" "}
+              <a href="https://computingeducationthings.substack.com/">
+                follow me on Substack
+              </a>
+              !).
+            </p>
+            <p>
+              Before beginning graduate school, I worked for 10 years in various
+              industry positions (my LinkedIn profile has more details about the
+              "industry side" of my life). I'm also passionate about outreach:
+              blogs, podcasts, newsletters, social media, and teaching, of
+              course.
+            </p>
 
-  <a class="fa-brands fa-google-scholar fa-2x"
-  href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=ANZ5fUOMurZyH0skWC2FvVythJGco0VwY0QH9tkZ0-R7dg2j5bQ8FLTwb4eRjDZqwWeCI4K1g0WM_MIN6ZarjA&user=mgKTgWcAAAAJ"
-></a>
-          <a class="fa-brands fa-x-twitter fa-2x"
-  href="https://x.com/DannyProl"
-></a>
-          <a
-            class="fa-brands fa-youtube fa-2x"
-            href="https://www.youtube.com/@ProlDaniel/videos"
-          ></a>
-        </div>
-        <p>
-  Hi! <span class="wave">👋</span> I'm Daniel. I'm a second-year PhD student in Computer Science at the University of Houston, advised by{" "}
-  <a href="https://www.aminalipour.com/">Amin Alipour</a> and <a href="https://www.cs.cmu.edu/~mhilton/">Michael Hilton</a>. I do
-  research in <span class="topic">Computing Education</span> (you
-  can <a href="https://computingeducationthings.substack.com/">follow me on Substack</a>
-  !).</p>
+            <div class="links">
+              <a
+                class="fa-solid fa-envelope"
+                href="mailto:dprol@uh.edu"
+                aria-label="Email"
+              ></a>
+              <a
+                class="fa-brands fa-github"
+                href="https://github.com/dprol"
+                aria-label="GitHub"
+              ></a>
+              <a
+                class="fa-brands fa-linkedin"
+                href="https://www.linkedin.com/in/dannyprol/"
+                aria-label="LinkedIn"
+              ></a>
+              <a
+                class="fa-brands fa-google-scholar"
+                href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=ANZ5fUOMurZyH0skWC2FvVythJGco0VwY0QH9tkZ0-R7dg2j5bQ8FLTwb4eRjDZqwWeCI4K1g0WM_MIN6ZarjA&user=mgKTgWcAAAAJ"
+                aria-label="Google Scholar"
+              ></a>
+              <a
+                class="fa-brands fa-x-twitter"
+                href="https://x.com/DannyProl"
+                aria-label="X"
+              ></a>
+              <a
+                class="fa-brands fa-youtube"
+                href="https://www.youtube.com/@ProlDaniel/videos"
+                aria-label="YouTube"
+              ></a>
+              <a
+                class="fa-solid fa-newspaper"
+                href="https://computingeducationthings.substack.com/"
+                aria-label="Substack"
+              ></a>
+            </div>
 
-  <p>Before beginning graduate school, I worked for 10 years in various industry positions (my LinkedIn profile has more details about the "industry side" of my life). I'm also passionate about outreach: blogs, podcasts, newsletters, social media, and teaching, of course.</p>
-        <h2>Publications</h2>
-        {pubs}
-        <h2>Projects</h2>
-        <p>Here are a few projects I've worked on over the years.</p>
-        <div class="stuff">
-          <a href="https://reunir.unir.net/handle/123456789/18436">
-            <div class="toy">
-              <h3>AI-powered programming assistant for coding students</h3>
-              <h3 class="year">2025</h3>
-            </div>
+            <h4>Contact</h4>
             <p>
-              Buddy is a VS Code extension that helps students better understand programming problems.
+              email: <a href="mailto:dprol@uh.edu">dprol@uh.edu</a>
             </p>
-          </a>
-          <a href="https://uhcsed.web.app/">
-            <div class="toy">
-              <h3>Research Group Website</h3>
-              <h3 class="year">2025</h3>
-            </div>
-            <p>
-              Learn about who I work with and what we do in our research group.
-            </p>
-          </a>
-          <a href="https://blog.danielprol.com/">
-            <div class="toy">
-              <h3>My occasional blog</h3>
-              <h3 class="year">2025</h3>
-            </div>
-            <p>
-              Includes software engineering deep dives, technical write-ups, and reflections on learning, programming, and AI.
-            </p>
-          </a>
-          <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
-            <div class="toy">
-              <h3>Podcast Host</h3>
-              <h3 class="year">2018</h3>
-            </div>
-            <p>
-              SaaS Product Chat was a Spanish-language video podcast covering software-as-a-service topics, featuring speakers from the Latin American and Spanish tech industry.
-            </p>
-          </a>
+          </div>
+
+          <div class="one-third column photo-column">
+            <img class="photo" src="photo.jpg" alt="A picture of Daniel Prol" />
+          </div>
         </div>
-        <h2>Blog</h2>
-        {blog}
-      </main>
+
+        <div class="row">
+          <div class="column">
+            <h4>Publications</h4>
+            {pubs}
+
+            <h4>Projects</h4>
+            <ul class="projects">
+              <li>
+                <a href="https://reunir.unir.net/handle/123456789/18436">
+                  AI-powered programming assistant for coding students
+                </a>{" "}
+                (2025) — Buddy is a VS Code extension that helps students better
+                understand programming problems.
+              </li>
+              <li>
+                <a href="https://uhcsed.web.app/">Research Group Website</a>{" "}
+                (2025) — Learn about who I work with and what we do in our
+                research group.
+              </li>
+              <li>
+                <a href="https://blog.danielprol.com/">My occasional blog</a>{" "}
+                (2025) — Software engineering deep dives, technical write-ups,
+                and reflections on learning, programming, and AI.
+              </li>
+              <li>
+                <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
+                  Podcast Host
+                </a>{" "}
+                (2018) — SaaS Product Chat was a Spanish-language video podcast
+                covering software-as-a-service topics, featuring speakers from
+                the Latin American and Spanish tech industry.
+              </li>
+            </ul>
+
+            <h4>Blog</h4>
+            {blog}
+          </div>
+        </div>
+      </div>
     </body>
   </html>
 );

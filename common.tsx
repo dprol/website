@@ -1,4 +1,3 @@
-import { Resvg } from "@resvg/resvg-js";
 import hljs from "highlight.js";
 import markdownit from "markdown-it";
 import markdownitKatex from "markdown-it-katex";
@@ -10,24 +9,27 @@ import prettier from "prettier";
 import { Content } from "./blog";
 import { Logo } from "./logo";
 import { publications } from "./publications";
-import { blogHtml, indexHtml } from "./templates";
+import { indexHtml } from "./templates";
 
 const importText = async (filename: string): Promise<string> => {
-  return await fs.readFile(filename, 'utf-8');
+  return await fs.readFile(filename, "utf-8");
 };
 
 const escapeHTML = (str: string): string => {
   return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 };
 
-const writeFile = async (filePath: string, data: string | Uint8Array | Blob): Promise<void> => {
+const writeFile = async (
+  filePath: string,
+  data: string | Uint8Array | Blob,
+): Promise<void> => {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
-  
+
   if (data instanceof Blob) {
     const arrayBuffer = await data.arrayBuffer();
     await fs.writeFile(filePath, new Uint8Array(arrayBuffer));
@@ -91,31 +93,32 @@ interface BlogPost {
 }
 
 export const blogPosts: Record<string, BlogPost> = {
-  "vibe-coding": { 
+  "vibe-coding": {
     title: "Vibe Coding Among CS Students",
     date: "2025-06-12",
-    href: "https://medium.com/@dannyprol/vibe-coding-among-cs-students-68a8861df436"
+    href: "https://medium.com/@dannyprol/vibe-coding-among-cs-students-68a8861df436",
   },
-  "koli-calling": { 
+  "koli-calling": {
     title: "Koli Calling 2024 Trip Report",
-    date: "2024-11-17", 
-    href: "https://blog.danielprol.com/posts/koli"
+    date: "2024-11-17",
+    href: "https://blog.danielprol.com/posts/koli",
   },
   "future-software-development": {
-    title: "The Future of Software Development and the Role of Computing Education with LLMs",
+    title:
+      "The Future of Software Development and the Role of Computing Education with LLMs",
     date: "2024-05-22",
-    href: "https://blog.danielprol.com/posts/dev-llm"
+    href: "https://blog.danielprol.com/posts/dev-llm",
   },
   "ai-changed-coding": {
-    title: "How AI changed the way we learn to code", 
+    title: "How AI changed the way we learn to code",
     date: "2024-05-13",
-    href: "https://blog.danielprol.com/posts/learning-code"
+    href: "https://blog.danielprol.com/posts/learning-code",
   },
-  "podcasts": {
+  podcasts: {
     title: "My Favorite Software Engineering Podcasts [2025 Edition]",
     date: "2025-09-07",
-    href: "https://blog.danielprol.com/posts/podcasts"
-  }
+    href: "https://blog.danielprol.com/posts/podcasts",
+  },
 };
 
 export const md = markdownit({
@@ -138,8 +141,15 @@ export const logo = () => {
 };
 
 const generate = async () => {
-  const staticFiles = ["all.css", "blog.css", "index.css", "photo.jpg"];
-  
+  const staticFiles = [
+    "all.css",
+    "blog.css",
+    "index.css",
+    "photo.jpg",
+    "css/normalize.css",
+    "css/skeleton.css",
+  ];
+
   for (const file of staticFiles) {
     try {
       if (await exists(`src/${file}`)) {
@@ -165,7 +175,10 @@ const generate = async () => {
   // Fixed: properly filter and sort published posts
   const publishedPosts = Object.entries(blogPosts)
     .filter(([_, post]) => post.date !== undefined)
-    .sort(([,a], [,b]) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
+    .sort(
+      ([, a], [, b]) =>
+        new Date(b.date!).getTime() - new Date(a.date!).getTime(),
+    );
 
   await writeFile(
     `${out}/index.html`,
@@ -177,7 +190,8 @@ const generate = async () => {
             {publishedPosts.map(([id, post]) => {
               return (
                 <li key={id}>
-                  {post.date} <a href={post.href} target="_blank" rel="noopener noreferrer">
+                  {post.date}{" "}
+                  <a href={post.href} target="_blank" rel="noopener noreferrer">
                     {post.title}
                   </a>
                 </li>
