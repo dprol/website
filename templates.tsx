@@ -18,13 +18,7 @@ const Head = () => (
   </>
 );
 
-export const indexHtml = ({
-  pubs,
-  blog,
-}: {
-  pubs: JSX.Element;
-  blog: JSX.Element;
-}) => (
+export const indexHtml = ({ pubs }: { pubs: JSX.Element }) => (
   <html lang="en">
     <head>
       <meta charset="utf-8" />
@@ -75,11 +69,6 @@ export const indexHtml = ({
 
             <div class="links">
               <a
-                class="fa-solid fa-envelope"
-                href="mailto:dprol@uh.edu"
-                aria-label="Email"
-              ></a>
-              <a
                 class="fa-brands fa-github"
                 href="https://github.com/dprol"
                 aria-label="GitHub"
@@ -105,11 +94,30 @@ export const indexHtml = ({
                 aria-label="YouTube"
               ></a>
               <a
+                class="fa-brands fa-instagram"
+                href="https://www.instagram.com/dannyprol/"
+                aria-label="Instagram"
+              ></a>
+              <a
                 class="fa-solid fa-newspaper"
                 href="https://computingeducationthings.substack.com/"
                 aria-label="Substack"
               ></a>
+              <a
+                class="substack"
+                href="https://blog.danielprol.com/posts/"
+                aria-label="Blog"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                </svg>
+              </a>
             </div>
+
+            <h4>Contact</h4>
+            <p>
+              email: <a href="mailto:dprol@uh.edu">dprol@uh.edu</a>
+            </p>
           </div>
 
           <div class="one-third column photo-column">
@@ -128,31 +136,28 @@ export const indexHtml = ({
                 <a href="https://reunir.unir.net/handle/123456789/18436">
                   AI-powered programming assistant for coding students
                 </a>{" "}
-                (2025) — Buddy is a VS Code extension that helps students better
+                — Buddy is a VS Code extension that helps students better
                 understand programming problems.
               </li>
               <li>
-                <a href="https://uhcsed.web.app/">Research Group Website</a>{" "}
-                (2025) — Learn about who I work with and what we do in our
-                research group.
+                <a href="https://uhcsed.web.app/">Research Group Website</a> —
+                Learn about who I work with and what we do in our research
+                group.
               </li>
               <li>
-                <a href="https://blog.danielprol.com/">My occasional blog</a>{" "}
-                (2025) — Software engineering deep dives, technical write-ups,
-                and reflections on learning, programming, and AI.
+                <a href="https://blog.danielprol.com/">My occasional blog</a> —
+                Software engineering deep dives, technical write-ups, and
+                reflections on learning, programming, and AI.
               </li>
               <li>
                 <a href="https://www.youtube.com/playlist?list=PLnLzwYW6HOC6SJ4d66pMm8ZWjEmgIwwRp">
                   Podcast Host
                 </a>{" "}
-                (2018) — SaaS Product Chat was a Spanish-language video podcast
+                — SaaS Product Chat was a Spanish-language video podcast
                 covering software-as-a-service topics, featuring speakers from
                 the Latin American and Spanish tech industry.
               </li>
             </ul>
-
-            <h4>Blog</h4>
-            {blog}
           </div>
         </div>
       </div>

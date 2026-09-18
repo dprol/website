@@ -172,33 +172,11 @@ const generate = async () => {
     console.log("Warning: src/photo.jpg not found, no icon will be available");
   }
 
-  // Fixed: properly filter and sort published posts
-  const publishedPosts = Object.entries(blogPosts)
-    .filter(([_, post]) => post.date !== undefined)
-    .sort(
-      ([, a], [, b]) =>
-        new Date(b.date!).getTime() - new Date(a.date!).getTime(),
-    );
-
   await writeFile(
     `${out}/index.html`,
     await renderHtml(
       indexHtml({
         pubs: publications(),
-        blog: (
-          <ul>
-            {publishedPosts.map(([id, post]) => {
-              return (
-                <li key={id}>
-                  {post.date}{" "}
-                  <a href={post.href} target="_blank" rel="noopener noreferrer">
-                    {post.title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        ),
       }),
     ),
   );

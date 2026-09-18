@@ -15,6 +15,17 @@ interface Publication {
 
 const pubs: Publication[] = [
   {
+    title:
+      "Pulla: A Parsons Problem Tool for Fine-Grained Behavioral Tracing and Instructor-Facing Problem-Solving Analysis",
+    href: "https://arxiv.org/abs/2609.15944",
+    venue: {
+      name: "arXiv Preprint",
+      href: "https://arxiv.org/",
+    },
+    year: 2026,
+    type: "Preprint",
+  },
+  {
     title: "Teamwork in Computing Education: Skills, Values, and Virtues",
     href: "https://dl.acm.org/doi/10.1145/3803401.3812054",
     venue: {
@@ -25,17 +36,8 @@ const pubs: Publication[] = [
     type: "Abstract",
   },
   {
-    title: "Asistente de IA para Visual Studio Code para el aprendizaje de programación",
-    href: "https://reunir.unir.net/handle/123456789/18436",
-    venue: {
-      name: "Re-UNIR",
-      href: "https://reunir.unir.net/",
-    },
-    year: 2025,
-    type: "Thesis",
-  },
-  {
-    title: "To Google or To ChatGPT? A Comparison of CS2 Students' Information Gathering Approaches and Outcomes",
+    title:
+      "To Google or To ChatGPT? A Comparison of CS2 Students' Information Gathering Approaches and Outcomes",
     href: "https://arxiv.org/abs/2501.11935",
     venue: {
       name: "arXiv Preprint",
@@ -45,7 +47,8 @@ const pubs: Publication[] = [
     type: "Preprint",
   },
   {
-    title: "From Prompts to Propositions: A Logic-Based Lens on Student-LLM Interactions",
+    title:
+      "From Prompts to Propositions: A Logic-Based Lens on Student-LLM Interactions",
     href: "https://dl.acm.org/doi/10.1145/3769994.3770004",
     venue: {
       name: "Koli Calling 2025",
