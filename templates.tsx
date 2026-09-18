@@ -127,7 +127,7 @@ export const indexHtml = ({ pubs }: { pubs: JSX.Element }) => (
 
         <div class="row">
           <div class="column">
-            <h4>Publications</h4>
+            <h4>Research</h4>
             {pubs}
 
             <h4>Projects</h4>
